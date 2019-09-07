@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightslategray;
+    font-family: 'Playfair Display', serif;
+}
+
+h1,h3 {
+    text-align: center;
+} 
+
+
+
+.gameBoard {
+    margin: 10px auto;
+    width: 108px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 6px;
+    justify-content: center;
+    
+}
+
+.gameBoard>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.Go {
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Go > button {
+    
+    background-color: brown;
+    border: none;
+    height: 45px;
+    font-weight: bold;
+}
+
+.Go > button:hover{
+    border: 1px solid black;
+}
+
+.hide {
+    display: none;
+}
+
+.playSym {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    opacity: 0;
+    transition: opacity,ease-out,1.5s;
+    }
+.playSym>div {
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border: 1px solid;
+    margin: 5px;
+}
+
+.playSymEffect {
+    opacity: 1;
+    
+}
+
+.cellWin {
+    background-color: brown;
+}
+.win {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslateblue;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity,ease-in-out, 3s;
+    z-index: -1;
+}
+.y {
+    opacity: 1;
+    z-index: 100;
+}
+.
