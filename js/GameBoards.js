@@ -19,15 +19,10 @@ let gameBoard = {
             if(((e.target.innerHTML != this.choosedSym) && (e.target.innerHTML != this.botSym)) && (!this.botTurn)) {
                 e.target.innerHTML = this.choosedSym;
                 bot.botMakeTurn();
-                this.botTurn = true;
-                  
+                this.botTurn = true;                 
             }
-
-        
-        
+ 
         });
-
-
 
         this.startButton.className = 'hide';
         // self = this;
@@ -43,8 +38,7 @@ let gameBoard = {
     choosing: function() {
         let crossEl = document.getElementById('cross');
         let zeroEl = document.getElementById('zero');
-        
-        
+              
         this.listener([crossEl,zeroEl],'click', (e) => {
             if(!this.choosedSym) {
                 this.choosedSym = e.target.innerHTML;
@@ -52,8 +46,6 @@ let gameBoard = {
                 while(this.navField.firstChild) {
                     this.navField.firstChild.remove();
                 };
-                 
-
             }
             let alertNode = `
                 <h3>Вы выбрали:</h3>
@@ -69,7 +61,6 @@ let gameBoard = {
                 
             },500);
         });
-
     },
 
     timer: function() {
@@ -80,8 +71,7 @@ let gameBoard = {
                 `;
             second++;
             this.check();
-        },1000)
-        
+        },1000)    
     },
 
     check: function () {
@@ -101,8 +91,7 @@ let gameBoard = {
                     }
                     else {
                         this.finish('bot');
-                    }
-                     
+                    }              
                 }
                         
             //HORIZONTAL CHECKING
@@ -119,8 +108,7 @@ let gameBoard = {
                     }
                     else {
                         this.finish('bot');
-                    }
-                                         
+                    }                                  
                 }
             
             //VERTICAL CHECKING
@@ -136,11 +124,8 @@ let gameBoard = {
                     }
                     else {
                         this.finish('bot');
-                    }
-                    
-                }
-            
-                
+                    }  
+                }            
         } 
         //STANDOFF CHECKING
         if ((this.cells[0].innerHTML != '') &&
@@ -156,11 +141,6 @@ let gameBoard = {
         {
             this.finish('standoff');  
         }
-       
-     
-       
-        
-        
     },
 
     finish: function (who) {
@@ -185,17 +165,10 @@ let gameBoard = {
             clearInterval(gameTime);
         }
         
-    },
-
-    //BOT Section
-
-   
-
-
-      
+    },  
 };
 
-
+ //BOT Section
 let bot = {
     win: [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]],
     chooseWin: function () {
@@ -253,11 +226,7 @@ let bot = {
             return 4;
         }
         else return this.chooseWin();
-
-
     },
-
-
 
     canTurn: function () {
 
@@ -272,10 +241,6 @@ let bot = {
 
         }
 
-
-
     }
-
-
 }
 
